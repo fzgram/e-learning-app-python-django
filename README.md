@@ -29,4 +29,4 @@ e-learning application in this directory:
 # Notes
 * The source code is released under the MIT License.
 
-Powered by ```anitanad.wordpress.com```
+
