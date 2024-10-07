@@ -3,3 +3,4 @@
 *.sqlite3
 source/settings_sensitive.py
 slug
+.venv

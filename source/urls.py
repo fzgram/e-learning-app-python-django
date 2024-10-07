@@ -10,25 +10,25 @@ Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
+    1. Import the include() function: from django.urls import path, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from users import views as user_views
 
 urlpatterns = [
-    url(r'^$', user_views.home, name='home'),
-    url(r'^about/$', user_views.about, name='about'),
-    url(r'^contact/$', user_views.contact, name='contact'),
+    path('', user_views.home, name='home'),
+    path('about/$', user_views.about, name='about'),
+    path('contact/$', user_views.contact, name='contact'),
 
-    url(r'^admin/', admin.site.urls),
-    url(r'^courses/', include('courses.urls')),
-    url(r'^forum/', include('forum.urls')),
-    url(r'^profile/', include('users.urls')),
-    url(r'^accounts/', include('registration.backends.default.urls')),
+    path('admin/', admin.site.urls),
+    path('courses/', include('courses.urls')),
+    path('forum/', include('forum.urls')),
+    path('profile/', include('users.urls')),
+    path('accounts/', include('registration.backends.default.urls')),
 ]
 
 # Remove this in project deployment

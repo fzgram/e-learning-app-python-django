@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 import datetime
 from django.db import migrations, models
-from django.utils.timezone import utc
+from django.utils import timezone
+import datetime
 
 
 class Migration(migrations.Migration):
@@ -17,13 +18,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='textblock',
             name='date_created',
-            field=models.DateTimeField(auto_now_add=True, default=datetime.datetime(2016, 4, 24, 17, 40, 54, 345815, tzinfo=utc)),
+            field=models.DateTimeField(auto_now_add=True, default=timezone.make_aware(datetime.datetime(2016, 4, 24, 17, 40, 54, 345815))),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='ytlink',
             name='date_created',
-            field=models.DateTimeField(auto_now_add=True, default=datetime.datetime(2016, 4, 24, 17, 41, 11, 187939, tzinfo=utc)),
+            field=models.DateTimeField(auto_now_add=True, default=timezone.make_aware(datetime.datetime(2016, 4, 24, 17, 41, 11, 187939))),
             preserve_default=False,
         ),
     ]
